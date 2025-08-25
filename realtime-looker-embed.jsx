@@ -1,12 +1,55 @@
-'use client'
+{
+  "name": "realtime-looker-embed",
+  "type": "code/react",
+  "content": "// package.json
+{
+  "name": "realtime-looker-embed",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "framer-motion": "^11.0.0",
+    "lucide-react": "^0.452.0",
+    "next": "14.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "^3.4.0",
+    "@/components": "*"
+  }
+}
 
-import React from "react";
-import { useEffect, useMemo, useRef, useState } from "react";
+// tailwind.config.js
+module.exports = {
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+
+// postcss.config.js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+
+// app/page.tsx
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { RefreshCcw, Link as LinkIcon, Timer, MonitorSmartphone } from "lucide-react";
 
 const LOOKER_STUDIO_EMBED_URL =
-  "https://lookerstudio.google.com/embed/reporting/4f544129-1f6f-4a88-97ea-b7ee4aed6f54/page/pXfVF";
+  "https://lookerstudio.google.com/reporting/4f544129-1f6f-4a88-97ea-b7ee4aed6f54";
 
 export default function Page() {
   const [url, setUrl] = useState(LOOKER_STUDIO_EMBED_URL);
@@ -38,8 +81,8 @@ export default function Page() {
     <div className="min-h-screen bg-slate-50 text-slate-900 p-6">
       <div className="max-w-5xl mx-auto">
         <header className="flex items-center gap-3 mb-6">
-          {/* <MonitorSmartphone className="w-6 h-6" /> */}
-          <h1 className="text-2xl font-bold"> 經濟專家系統即時報表</h1>
+          <MonitorSmartphone className="w-6 h-6" />
+          <h1 className="text-2xl font-bold">Looker Studio 即時報表</h1>
         </header>
 
         <div className="flex gap-2 mb-4">
@@ -61,7 +104,6 @@ export default function Page() {
             key={bustSrc}
             ref={iframeRef}
             src={bustSrc}
-            // src="https://lookerstudio.google.com/embed/reporting/4f544129-1f6f-4a88-97ea-b7ee4aed6f54/page/pXfVF"
             className="w-full h-[70vh]"
             allowFullScreen
           />
@@ -74,3 +116,8 @@ export default function Page() {
     </div>
   );
 }
+
+// styles/globals.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
