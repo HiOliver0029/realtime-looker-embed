@@ -134,11 +134,11 @@ export default function Page() {
 ### 每週工作流程
 
 1. **建立新問卷**
-    - 用 Google Form 建立當週題目。
+    - 用 Google Form 建立當週題目，範例如[連結](https://forms.gle/Kkja3YEvvus1dCvw5)。
     - 連結新的試算表分表。
 2. **更新分表清單**
     - 複製分表網址 → 從網址取得試算表 ID，例如 'https://docs.google.com/spreadsheets/d/16bkYdLw48e8R7UzbNxg3JTcbqmme2eD4nty4s3FSE50/edit?resourcekey=&gid=2001542632#gid=2001542632' 這個試算表的 ID 是 '16bkYdLw48e8R7UzbNxg3JTcbqmme2eD4nty4s3FSE50'。
-    - 貼到總表的分表清單「FormList」工作表。
+    - 貼到總表的分表清單「FormList」工作表。[總表連結](https://docs.google.com/spreadsheets/d/1AV8f3LAST81wvA5xgXj1U_IbpQPA7jJhBVHCzb-NbqU/edit?usp=sharing)
 3. **寄信給專家**
     - 使用 Gmail + Apps Script，自動寄信給 EmailList 工作表清單上的郵件。已設定每周寄信，若更改清單從 google sheet 做刪減即可，若更改時間需從 Apps Script 的觸發條件改，[連結點此](https://script.google.com/u/0/home/projects/1G6wt2IFBEaE33cWe8lPp-S5pXenQ9ou760MyBiAI3o-q0hBzDkeQ8Qxw/triggers)。
     - 信件內包含 Google Form 連結。
@@ -148,5 +148,5 @@ export default function Page() {
 5. **查看報表**
     - [點擊此連結](https://realtime-looker-embed.vercel.app/)可以看到經濟專家系統即時報表，點選手動刷新以確認看到的資料是最新。
 5. **修改報表**
-    - 打開 Looker Studio 報表。
-    - 用「週次」篩選即可查看不同週次的數據。
+    - 打開 Looker Studio 報表，[連結點此](https://lookerstudio.google.com/reporting/4f544129-1f6f-4a88-97ea-b7ee4aed6f54)
+    - 用周次「Week」篩選即可查看不同週次的數據。
