@@ -38,7 +38,7 @@ export default function Page() {
     <div className="min-h-screen bg-slate-50 text-slate-900 p-6">
       <div className="max-w-5xl mx-auto">
         <header className="flex items-center gap-3 mb-6">
-          {/* <MonitorSmartphone className="w-6 h-6" /> */}
+          <MonitorSmartphone className="w-6 h-6" />
           <h1 className="text-2xl font-bold"> 經濟專家系統即時報表</h1>
         </header>
 
